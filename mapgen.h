@@ -3,6 +3,7 @@
 
 #define internal static;
 #define local_persist static;
+#define global_variable static;
 
 internal const uint16_t ScreenWidth = 800;
 internal const uint16_t ScreenHeight = 600;
@@ -15,4 +16,6 @@ LRESULT CALLBACK WindowProc(
   LPARAM lParam
 );
 
-internal void UpdateAndRender();
+internal void RenderPoorly(HDC DeviceContext);
+internal void ClearToBlack(HDC DeviceContext, PAINTSTRUCT *Paint);
+internal void DrawWindow(HDC DeviceContext, int X, int Y, int Width, int Height);
